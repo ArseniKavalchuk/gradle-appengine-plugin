@@ -36,7 +36,28 @@ class WebXmlProcessing {
     }
 
     private static NodeChild getSystemServiceServlet(GPathResult root) {
-        def servlets = root."servlet".findAll { it."servlet-class".text().trim() == "com.google.api.server.spi.SystemServiceServlet" ? it : null }
+        def servlets = root."servlet".findAll { servlet ->
+            def servletClass = servlet."servlet-class".text().trim()
+            def servletName = servlet."servlet-name".text().trim()
+            if ("com.google.api.server.spi.SystemServiceServlet" == servletClass || "SystemServiceServlet" == servletName) {
+                println "Found ${servletName} of type ${servletClass}"
+                servlet
+            } else {
+                null
+                
+                //TODO : could we get correct clssloader here and load servlet classes? or maybe ASM?
+                
+                /*
+                try {
+                    Class originalClazz = Class.forName("com.google.api.server.spi.SystemServiceServlet");
+                    Class clazz = Class.forName(servletClass)
+                    originalClazz.isAssignableFrom(clazz) ? true : false
+                } catch (Exception e) {
+                    println "Cannot load class ${servletClass} !"
+                }
+                */
+            }
+        }
         if(servlets.size() != 1) {
             throw new GradleException("web.xml must have 1 (found:${servlets.size()}) SystemServiceServlet servlet")
         }
