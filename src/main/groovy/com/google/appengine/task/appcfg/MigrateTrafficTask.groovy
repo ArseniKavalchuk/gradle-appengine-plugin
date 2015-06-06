@@ -26,6 +26,6 @@ class MigrateTrafficTask extends AppConfigTaskTemplate {
 
     @Override
     List getParams() {
-        [COMMAND, getWebAppSourceDirectory().canonicalPath]
+        [COMMAND, getWorkingDirectory().canonicalPath]
     }
 }

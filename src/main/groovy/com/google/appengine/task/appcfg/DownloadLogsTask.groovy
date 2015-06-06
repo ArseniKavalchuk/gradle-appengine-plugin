@@ -81,7 +81,7 @@ class DownloadLogsTask extends AppConfigTaskTemplate {
         }
 
         params << COMMAND
-        params << getWebAppSourceDirectory().canonicalPath
+        params << getWorkingDirectory().canonicalPath
         params << getOutputFile().canonicalFile
         params
     }
