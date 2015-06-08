@@ -377,7 +377,7 @@ class AppEnginePlugin implements Plugin<Project> {
 
     private void configureUpdate(Project project) {
         project.tasks.withType(UpdateTask).whenTaskAdded { UpdateTask appengineUpdateTask ->
-            appengineUpdateTask.conventionMapping.map(EXPLODED_WAR_DIR_CONVENTION_PARAM) { explodedWarDirectory }
+            appengineUpdateTask.conventionMapping.map(EXPLODED_WAR_DIR_CONVENTION_PARAM) { this.explodedAppDirectory }
             appengineUpdateTask.conventionMapping.map('useJava7') { this.appEnginePluginExtension.appCfg.update.useJava7 }
         }
 
