@@ -23,7 +23,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.google.appengine:gradle-appengine-plugin:1.9.24'
+    classpath 'com.google.appengine:gradle-appengine-plugin:1.9.27'
   }
 }
 ```
@@ -36,7 +36,7 @@ the configuration `appengineSdk`.
 
 ```gradle
 dependencies {
-  appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.24'
+  appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.27'
 }
 ```
 
@@ -185,9 +185,9 @@ appengine {
 
 ## FAQ
 
-**Can I use the plugin with a [Gaelyk](http://appenginelyk.appspot.com/) project?**
+**Can I use the plugin with a [Gaelyk](http://gaelyk.appspot.com/) project?**
 
-Gaelyk's [template project](http://appenginelyk.appspot.com/tutorial/template-project) uses this plugin out-of-the-box so no
+Gaelyk's [template project](http://gaelyk.appspot.com/tutorial/template-project) uses this plugin out-of-the-box so no
 additional configuration needs to be done. If you start your project from scratch and decide to use the plugin please refer
 to the following sections to configure it properly.
 
@@ -258,7 +258,7 @@ which lets you define your functional test dependencies via the configuration `f
 has been fully integrated into the build lifecycle.
 
 One of the most prominent functional testing libraries in the Groovy ecosystem is [Geb](http://www.gebish.org/), an expressive
-and powerful browser automation solution. Please refer to this short and sweet [tutorial](http://blog.proxerd.pl/article/funcational-testing-of-appengine-lyk-applications-with-geb)
+and powerful browser automation solution. Please refer to this short and sweet [tutorial](http://blog.proxerd.pl/article/funcational-testing-of-gae-lyk-applications-with-geb)
 for a quickstart.
 
 <br>
