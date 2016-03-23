@@ -9,3 +9,6 @@ out
 .classpath
 .project
 /bin
+/.classpath
+/.project
+gradle.properties

@@ -23,7 +23,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.google.appengine:gradle-appengine-plugin:1.9.30'
+    classpath 'com.google.appengine:gradle-appengine-plugin:1.9.32'
   }
 }
 ```
@@ -36,7 +36,7 @@ the configuration `appengineSdk`.
 
 ```gradle
 dependencies {
-  appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.30'
+  appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.32'
 }
 ```
 
@@ -63,6 +63,7 @@ The App Engine plugin defines the following tasks:
 * `appengineRun`: Starts a local development server running your project code. By default the WAR file is created, exploded and used as
 web application directory each time you run this task. This behavior can be changed by setting the convention property
 `warDir`.
+* `appengineSetDefaultVersion` : Sets the default version of the given module based on `appengine-web.xml`.
 * `appengineStartBackend`: Sets the backend state to `START`, allowing it to receive HTTP requests. The backend is defined by the project property `backend`.
 * `appengineStop`: Stops the local development server.
 * `appengineStopBackend`: Sets the backend state to `STOP` and shuts down any running instances. The backend is defined by the project property `backend`.
